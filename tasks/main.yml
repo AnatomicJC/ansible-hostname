@@ -1,0 +1,4 @@
+---
+- import_tasks: set-hostname.yml
+  when: hostname_hostname != False
+  tags: hostname

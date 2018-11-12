@@ -7,11 +7,13 @@
 
 - name: Set hostname in /etc/hostname and /etc/mailname
   template:
-    src: "etc/hostname.j2"
-    dest: "{{ item }}"
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
   with_items:
-    - "/etc/hostname"
-    - "/etc/mailname"
+    - src: "etc/hostname.j2"
+      dest: "/etc/hostname"
+    - src: "etc/mailname.j2"
+      dest: "/etc/mailname"
 
 - name: Set hostname with hostname command
   command: "hostname --file /etc/hostname"

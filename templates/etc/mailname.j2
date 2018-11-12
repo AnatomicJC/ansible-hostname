@@ -1,0 +1,5 @@
+{% if hostname_mailname %}
+{{ hostname_mailname }}
+{% else %}
+{{ hostname_hostname }}{{'.' + hostname_domain if hostname_domain else '' }}
+{% endif %}

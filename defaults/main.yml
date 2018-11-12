@@ -1,3 +1,4 @@
 ---
 hostname_hostname: False
 hostname_domain: False 
+hostname_mailname: False

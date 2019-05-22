@@ -1,4 +1,4 @@
 ---
-hostname_hostname: False
-hostname_domain: False 
-hostname_mailname: False
+hostname_hostname: ""
+hostname_domain: "" 
+hostname_mailname: ""

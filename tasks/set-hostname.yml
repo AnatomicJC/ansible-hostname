@@ -3,7 +3,7 @@
   lineinfile:
     dest: /etc/hosts
     regexp: "^127.0.1.1"
-    line: "127.0.1.1 {{ hostname_hostname}} {{ hostname_hostname + '.' + hostname_domain if hostname_domain else '' }}"
+    line: "127.0.1.1 {{ hostname_hostname }} {{ hostname_hostname + '.' + hostname_domain if hostname_domain else '' }}"
 
 - name: Set hostname in /etc/hostname and /etc/mailname
   template:
@@ -17,6 +17,7 @@
 
 - name: Set hostname with hostname command
   command: "hostname --file /etc/hostname"
+  changed_when: False
 
 # FIXME hostnamectl depends on dbus
 #- name: Set hostname with systemd

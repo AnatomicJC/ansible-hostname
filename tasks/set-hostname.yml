@@ -4,6 +4,8 @@
     dest: /etc/hosts
     regexp: "^127.0.1.1"
     line: "127.0.1.1 {{ hostname_hostname }} {{ hostname_hostname + '.' + hostname_domain if hostname_domain else '' }}"
+  notify:
+    - get facts
 
 - name: Set hostname in /etc/hostname and /etc/mailname
   template:
@@ -14,6 +16,8 @@
       dest: "/etc/hostname"
     - src: "etc/mailname.j2"
       dest: "/etc/mailname"
+  notify:
+    - get facts
 
 - name: Set hostname with hostname command
   command: "hostname --file /etc/hostname"

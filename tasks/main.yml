@@ -2,3 +2,5 @@
 - import_tasks: set-hostname.yml
   when: hostname_hostname|length > 0
   tags: hostname
+
+- meta: flush_handlers

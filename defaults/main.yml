@@ -1,4 +1,4 @@
 ---
-hostname_hostname: ""
+hostname_hostname: "{{ inventory_hostname }}"
 hostname_domain: "" 
 hostname_mailname: ""
